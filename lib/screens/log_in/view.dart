@@ -3,9 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:foodninja/screens/core/logic/helper_method.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
+import '../bottom_navigate/view.dart';
 import '../core/design/app_input.dart';
 import '../core/design/text_input.dart';
-import '../sign_up/view.dart';
+import '../forget_password/view.dart';
 
 class LogInView extends StatelessWidget {
   const LogInView({Key? key}) : super(key: key);
@@ -115,7 +116,7 @@ class LogInView extends StatelessWidget {
                   ),
                   SizedBox(height: 20.h),
                   GestureDetector(onTap: (){
-                    navigateTo(context, const SignUpView());
+                    navigateTo(context, const ForgetPasswordView());
                   },
                     child: GradientText("Forgot Your Password?",
                         style: const TextStyle(fontSize: 15,fontFamily: "Ben",fontWeight: FontWeight.w700,decoration: TextDecoration.underline),
@@ -126,7 +127,7 @@ class LogInView extends StatelessWidget {
                   ),
                   SizedBox(height: 54.h),
                   GestureDetector(onTap: (){
-                    //navigateTo(context, SignUpView());
+                    navigateTo(context, PagesNavView());
                   },child: const AppInputView(text: "Login",)),
                 ],
               ),

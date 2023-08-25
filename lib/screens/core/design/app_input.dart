@@ -7,22 +7,27 @@ class AppInputView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 57.h,
-      width: 157.w,
-      decoration: BoxDecoration(
-        gradient: const LinearGradient(
-          begin: AlignmentDirectional.centerStart,
-          end: AlignmentDirectional.centerEnd,
-          colors: [
-            Color(0xff53E88B),
-            Color(0xff15BE77),
-          ],
+    return Material(
+      elevation: 5,
+      shadowColor: Color(0xff5A6CEA).withOpacity(.4),
+      borderRadius: BorderRadius.circular(15),
+      child: Container(
+        height: 57.h,
+        width: 157.w,
+        decoration: BoxDecoration(
+          gradient: const LinearGradient(
+            begin: AlignmentDirectional.centerStart,
+            end: AlignmentDirectional.centerEnd,
+            colors: [
+              Color(0xff53E88B),
+              Color(0xff15BE77),
+            ],
+          ),
+          borderRadius: BorderRadius.circular(15.r)
         ),
-        borderRadius: BorderRadius.circular(15.r)
-      ),
-      child: Center(child: Text(text,style: const TextStyle(fontSize: 16,color: Color(0xffFFFFFF),fontWeight: FontWeight.bold),)),
+        child: Center(child: Text(text,style: const TextStyle(fontSize: 16,color: Color(0xffFFFFFF),fontWeight: FontWeight.bold),)),
 
+      ),
     );
   }
 }

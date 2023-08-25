@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:foodninja/screens/core/design/app_input.dart';
+import 'package:foodninja/screens/core/logic/helper_method.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
+
+import '../bottom_navigate/view.dart';
 
 class SignUpSuccessView extends StatelessWidget {
   const SignUpSuccessView({Key? key}) : super(key: key);
@@ -27,7 +30,10 @@ class SignUpSuccessView extends StatelessWidget {
                 SizedBox(height: 12.h,),
                 Text("Your Profile Is Ready To Use",style: TextStyle(fontSize: 23,fontFamily: "Ben",color: Color(0xff09051C),fontWeight: FontWeight.bold),),
                 SizedBox(height: 192.h,),
-                AppInputView(text: "Try Order")
+                GestureDetector(onTap: (){
+                  navigateTo(context, PagesNavView());
+                },
+                child: AppInputView(text: "Try Order"),),
               ],
             ),
           ),

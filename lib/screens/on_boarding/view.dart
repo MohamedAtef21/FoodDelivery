@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:foodninja/screens/core/design/app_input.dart';
 import 'package:foodninja/screens/core/logic/helper_method.dart';
-
-import '../log_in/view.dart';
+import '../sign_up/view.dart';
 
 class OnBoardingView extends StatefulWidget {
   const OnBoardingView({Key? key}) : super(key: key);
@@ -78,14 +77,14 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                   SizedBox(height: 42.h),
                   GestureDetector( onTap: (){
                     if(currentPage==1){
-                      navigateTo(context, const LogInView(),false);
+                      navigateTo(context, const SignUpView(),false);
                       setState(() {});
                     }else{
                       currentPage++;
                       setState(() {});
                     }
                   },
-                      child: const AppInputView(text: "Next",))
+                      child:  AppInputView(text: "Next",))
                 ],
               ),
             ),

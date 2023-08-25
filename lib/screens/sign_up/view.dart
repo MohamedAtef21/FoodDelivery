@@ -5,6 +5,7 @@ import 'package:foodninja/screens/core/logic/helper_method.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import '../core/design/checkbox.dart';
 import '../core/design/text_icon.dart';
+import '../log_in/view.dart';
 import '../sign_up_process/view.dart';
 
 class SignUpView extends StatefulWidget {
@@ -21,7 +22,7 @@ class _SignUpViewState extends State<SignUpView> {
     return Scaffold(
       body: Stack(
         children: [
-          Image.asset("assets/images/background.png", height: double.infinity, fit: BoxFit.fill,),
+          Image.asset("assets/images/background.png",),
           SingleChildScrollView(
             child: Padding(
               padding: EdgeInsetsDirectional.all(47),
@@ -64,13 +65,17 @@ class _SignUpViewState extends State<SignUpView> {
                   const SizedBox(height: 7),
                   Row(
                     children: [
-                      // GestureDetector(
-                      //   onTap: (){
-                      //     isCheckVisible = !isCheckVisible;
-                      //     setState(() {});
-                      //   },
-                      //   child:isCheckVisible? CheckBoxView() :null,
-                      // ),
+                      SizedBox(
+                        height: 22.h,
+                        width: 22.w,
+                        child: GestureDetector(
+                          onTap: (){
+                            isCheckVisible = !isCheckVisible;
+                            setState(() {});
+                          },
+                          child:isCheckVisible? CheckBoxView() :null,
+                        ),
+                      ),
                       SizedBox(width: 8.w,),
                       const Text("Keep Me Signed In")
                     ],
@@ -78,13 +83,17 @@ class _SignUpViewState extends State<SignUpView> {
                   const SizedBox(height: 12),
                   Row(
                     children: [
-                      // GestureDetector(
-                      //   onTap: (){
-                      //     isCheckVisible = !isCheckVisible;
-                      //     setState(() {});
-                      //   },
-                      //     child:isCheckVisible? CheckBoxView() :null,
-                      // ),
+                      SizedBox(
+                        height: 22.h,
+                        width: 22.w,
+                        child: GestureDetector(
+                          onTap: (){
+                            isCheckVisible = !isCheckVisible;
+                            setState(() {});
+                          },
+                            child:isCheckVisible? CheckBoxView() :null,
+                        ),
+                      ),
                       SizedBox(width: 8.w,),
                        Text("Email Me About Special Pricing",)
                     ],
@@ -95,12 +104,14 @@ class _SignUpViewState extends State<SignUpView> {
                   },
                       child: const AppInputView(text: "Create Account")),
                   SizedBox(height: 20.h),
-                  GradientText("already have an account?",
-                      style: const TextStyle(fontSize: 15,fontFamily: "Ben",fontWeight: FontWeight.w700,decoration: TextDecoration.underline),
-                      colors:const [
-                        Color(0xff53E88B),
-                        Color(0xff15BE77)
-                      ]),
+                  GestureDetector(onTap: (){navigateTo(context, LogInView());},
+                    child: GradientText("already have an account?",
+                        style: const TextStyle(fontSize: 15,fontFamily: "Ben",fontWeight: FontWeight.w700,decoration: TextDecoration.underline),
+                        colors:const [
+                          Color(0xff53E88B),
+                          Color(0xff15BE77)
+                        ]),
+                  ),
                 ],
               ),
             ),

@@ -40,6 +40,10 @@ dependencies:
   simple_gradient_text: ^1.2.4
   roundcheckbox: ^2.0.5
   image_picker: ^1.0.2
+  google_nav_bar: ^5.0.6
+  flutter_slidable: ^3.0.0
+  google_maps_flutter: ^2.4.0
+  geolocator: ^10.0.0
 
 dev_dependencies:
   flutter_test:

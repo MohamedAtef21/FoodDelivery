@@ -8,13 +8,18 @@ class ContainerImageView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      height: contHeight,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(22.r),
+    return Material(
+      elevation: 5,
+      shadowColor: Color(0xff5A6CEA).withOpacity(.4),
+      borderRadius: BorderRadius.circular(15),
+      child: Container(
+        width: double.infinity,
+        height: contHeight,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(22.r),
+        ),
+        child:Image.asset("assets/images/${imageInput}.png"),
       ),
-      child:Image.asset("assets/images/${imageInput}.png"),
     );
   }
 }

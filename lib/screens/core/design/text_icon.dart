@@ -12,16 +12,22 @@ class TextInputIconView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 12),
-      child: TextFormField(
-        keyboardType: inputType,
-        obscureText: obscureText,
-        decoration: InputDecoration(
-          prefixIcon: SvgPicture.asset("assets/icons/$iconPath.svg",fit: BoxFit.scaleDown),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.all(Radius.circular(15.r)),
-            ),
-            labelText: labelText,
-            labelStyle:const TextStyle(fontSize: 14,fontFamily: "Ben",color: Color(0xff3B3B3B))
+      child: Material(
+        elevation: 5,
+        shadowColor: Color(0xff5A6CEA).withOpacity(.2),
+        borderRadius: BorderRadius.circular(15),
+        child: TextFormField(
+          keyboardType: inputType,
+          obscureText: obscureText,
+          decoration: InputDecoration(
+            prefixIcon: SvgPicture.asset("assets/icons/$iconPath.svg",fit: BoxFit.scaleDown),
+              border: OutlineInputBorder(
+                borderSide: BorderSide.none,
+                borderRadius: BorderRadius.all(Radius.circular(15.r)),
+              ),
+              labelText: labelText,
+              labelStyle:const TextStyle(fontSize: 14,fontFamily: "Ben",color: Color(0xff3B3B3B))
+          ),
         ),
       ),
     );
